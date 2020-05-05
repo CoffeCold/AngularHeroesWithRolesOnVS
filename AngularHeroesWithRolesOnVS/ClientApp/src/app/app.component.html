@@ -1,6 +1,16 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-</body>
+<h1>{{title}}</h1>
+<nav>
+	<a routerLink="/dashboard" *ngIf="isReader">Dashboard</a>
+	<a routerLink="/heroes"*ngIf="isReader">Heroes</a>
+	<a class="nav-item nav-link" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+</nav>
+<div *ngIf="isLoggedIn">Welcome {{currentUser.firstName}} {{currentUser.lastName}}</div>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
