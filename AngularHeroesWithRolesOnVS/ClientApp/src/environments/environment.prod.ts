@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: "https://172.16.56.128/HeroesBusinessLayerRoleBased"
 };
